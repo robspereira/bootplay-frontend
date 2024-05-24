@@ -21,7 +21,7 @@ export default function Dashboard() {
 
   useEffect(() => {    
 
-    album_api.get('/albums/all?searchText=anitta')
+    album_api.get('/albums/all?search=anitta')
     .then((resp) => {
         setAlbums(resp.data);
         setIsLoading(false);
@@ -36,7 +36,7 @@ export default function Dashboard() {
     event.preventDefault();
     setIsLoading(true);
     
-    album_api.get(`/albums/all?searchText=${search}`).then((resp) => {            
+    album_api.get(`/albums/all?search=${search}`).then((resp) => {            
         setAlbums(resp.data);
         setIsLoading(false);
         setShow(false);
